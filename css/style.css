@@ -1,23 +1,41 @@
 body{
-    background-color: darkgrey;
+    margin: 0px;
 }
 
 h1{
-    color:darkslategray;
+    color:rgb(12, 192, 192);
 }
 
 ol{
     font-weight: bold;
 }
+
 #navigation {
-
+    background-color: red;
 }
+
+#navigation > ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+#navigation > ul > li {
+    display: inline;
+    margin: 0 10px 0 0;
+}
+
 #header {
-
+    padding: 10px;
+    background-color: orange;
 }
+
 #contents {
-
+    padding: 10px;
+    background-color: yellow;
 }
+
 #footer {
-    
+    padding: 10px;
+    background-color: green;
 }
