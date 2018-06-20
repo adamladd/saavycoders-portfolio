@@ -10,8 +10,15 @@ ol{
     font-weight: bold;
 }
 
+img {
+    width: 100%;
+    max-width: 750px;
+}
+
 #navigation {
     background-color: red;
+    position: fixed;
+    width: 100vw;
 }
 
 #navigation > ul {
@@ -25,6 +32,10 @@ ol{
     margin: 0 10px 0 0;
 }
 
+#navigation .container {
+    margin: 0 auto;
+}
+
 #header {
     padding: 10px;
     background-color: orange;
@@ -35,7 +46,44 @@ ol{
     background-color: yellow;
 }
 
+#contents p + ul {
+    background-color: blue;
+}
+
+#contents li:first-child {
+    background-color: violet
+}
+
+#contents li:last-child {
+    background-color: plum
+}
+
+#contents li:nth-child(2) {
+    background-color: purple
+}
+
 #footer {
     padding: 10px;
     background-color: green;
+}
+
+#footer > ol {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+#footer > ol > li {
+    margin: 0 10px 0 0;
+    display: inline;
+}
+
+#footer .container {
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 760px;
+    width: 100%;
 }
