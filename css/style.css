@@ -1,9 +1,9 @@
-body{
-    margin: 0px;
-}
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-h1{
-    color:rgb(12, 192, 192);
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    background-color: slategray;
 }
 
 ol{
@@ -12,13 +12,33 @@ ol{
 
 img {
     width: 100%;
-    max-width: 750px;
+    max-width: 800px;
+}
+
+a {
+    color: rgb(56, 57, 61);
+}
+
+a:link {
+    color: 56,57,61;
+}
+
+a:visited {
+    color: lavender;
+}
+
+a:hover {
+    color: whitesmoke;
 }
 
 #navigation {
-    background-color: red;
+    background: url("../assets/mistymountains.jpg") no-repeat;
+    background-size: cover;
+    background-position: 55%;
+    background-attachment: local;
     position: fixed;
     width: 100vw;
+    padding: 5%;
 }
 
 #navigation > ul {
@@ -36,18 +56,21 @@ img {
     margin: 0 auto;
 }
 
+#navigation > p {
+    font-size: 10px;
+    text-align: right;
+}
+
 #header {
-    padding: 10px;
-    background-color: orange;
+    padding: 20px;
 }
 
 #contents {
     padding: 10px;
-    background-color: yellow;
 }
 
 #contents p + ul {
-    background-color: blue;
+
 }
 
 #contents li:first-child {
@@ -64,16 +87,15 @@ img {
 
 #footer {
     padding: 10px;
-    background-color: green;
 }
 
-#footer > ol {
+#footer ul {
     margin: 0;
     padding: 10px;
     list-style: none;
 }
 
-#footer > ol > li {
+#footer li {
     margin: 0 10px 0 0;
     display: inline;
 }
