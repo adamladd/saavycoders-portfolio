@@ -24,7 +24,7 @@ a:link {
 }
 
 a:visited {
-    color: lavender;
+    color: whitesmoke;
 }
 
 a:hover {
@@ -41,7 +41,7 @@ a:hover {
     padding: 5%;
 }
 
-#navigation > ul {
+#navigation ul {
     list-style: none;
     margin: 0;
     padding: 10px;
@@ -59,6 +59,23 @@ a:hover {
 #navigation > p {
     font-size: 10px;
     text-align: right;
+}
+
+#navigation li {
+    position: relative;
+}
+
+#navigation a + ul {
+    background-color: rgb(131, 137, 143);
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 20px;
+}
+
+#navigation a:hover + ul,
+#navigation a + ul:hover {
+    display: block;
 }
 
 #header {
