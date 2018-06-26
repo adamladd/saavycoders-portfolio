@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
 body{
-    font-family: 'Lato', sans-serif;
-    margin: 0px;
     background-color: slategray;
+    display: grid;
+    font-family: 'Lato', sans-serif;
+    grid-template-areas: 
+        "navigation"
+        "header"
+        "content"
+        "footer";
+    grid-template-rows: min-content min-content auto min-content;
+    min-height: 100vh;
 }
 
 ol{
@@ -21,10 +26,7 @@ a {
 
 a:link {
     color: 56,57,61;
-}
-
-a:visited {
-    color: whitesmoke;
+    text-decoration: none;
 }
 
 a:hover {
@@ -36,19 +38,20 @@ a:hover {
     background-size: cover;
     background-position: 55%;
     background-attachment: local;
-    position: fixed;
-    width: 100vw;
     padding: 5%;
 }
 
 #navigation ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     list-style: none;
     margin: 0;
     padding: 10px;
 }
 
 #navigation > ul > li {
-    display: inline;
     margin: 0 10px 0 0;
 }
 
@@ -75,7 +78,8 @@ a:hover {
 
 #navigation a:hover + ul,
 #navigation a + ul:hover {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 #header {
@@ -125,4 +129,20 @@ a:hover {
     margin: 0 auto;
     max-width: 760px;
     width: 100%;
+}
+
+.fa-github {
+    color: hotpink;
+}
+
+.fa-github:hover {
+    color:whitesmoke;
+}
+
+.fa-linkedin-in {
+color: blue;
+}
+
+.fa-google {
+
 }
