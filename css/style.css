@@ -16,8 +16,11 @@ ol{
 }
 
 img {
-    width: 100%;
-    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    width: 300px;
 }
 
 a {
@@ -39,14 +42,22 @@ a:hover {
     background-position: 55%;
     background-attachment: local;
     padding: 5%;
+    position: sticky;
+    top: 0;
 }
 
 #navigation ul {
     align-items: center;
     display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+#navigation > ul {
+    align-items: center;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
-    list-style: none;
     margin: 0;
     padding: 10px;
 }
@@ -127,8 +138,7 @@ a:hover {
 
 .container {
     margin: 0 auto;
-    max-width: 760px;
-    width: 100%;
+    max-width: 800px;
 }
 
 .fa-github {
@@ -145,4 +155,24 @@ color: blue;
 
 .fa-google {
 
+}
+
+@media (min-width: 612px) {
+    body{
+        grid-template-columns: 10rem auto;
+        grid-template-rows: min-content auto min-content;
+        grid-template-areas:
+          "navigation header"
+          "navigation content"
+          "navigation footer";
+    }
+
+    #navigation {
+        grid-area: navigation;
+    }
+
+    #navigation > ul {
+        flex-direction: column;
+        height: 25vh;
+    }
 }
