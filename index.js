@@ -3,36 +3,97 @@ import Header from './src/Header';
 import Contents from './src/Contents';
 import Footer from './src/Footer';
 
-var greeting = document.querySelector('#greeting');
+var Home = {
+    'title': "Adam Ladd's Savvy Coders Project"
+};
 
-var greetUser = function greetUser(){
-    var firstName = prompt('What is your first name?');
-    var lastName = prompt('What is your last name?');
+var About = {
+    'title': 'the "About Me" page! `.=.,,,'
+};
 
-    if(firstName && lastName){
-        greeting.innerHTML = `
-            <div>
-                <p>
-                    Bienvenue ${firstName} ${lastName}, welcome!
-                </p>
-            </div>
-        `;
-    }
-    else{
-        greetUser();
-    }
+var Project = {
+    'title': 'my projects page'
+};
+
+var Blog = {
+    'title': 'my blog page!'
+};
+
+var Contact = {
+    'title': 'the contact page!'
 };
 
 var initialHTML = document.body.innerHTML;
+var root = document.querySelector('#root');
 
-document
-    .body
-    .innerHTML = `
-    ${Navigation}
-    ${Header}
-    ${Contents}
-    ${Footer}
-    ${initialHTML}
-    `;
+function render(state){
+    var greeting;
+    var input;
+    var links;
 
-greetUser();
+    root.innerHTML = `
+        ${Navigation}
+        ${Header(state)}
+        ${Contents}
+        ${Footer}
+        ${initialHTML}
+        `;
+
+    greeting = document.querySelector('#greeting');
+    input = document.querySelector('#header input');
+        
+    input.addEventListener(
+        'keyup',
+        (event) => greeting.innerHTML = `
+                <div>
+                    <h3>Welcome to my home page,</h3>
+                    <h4>${event.target.value}</h4>
+                </div>
+        `
+    );
+
+    links = document.querySelectorAll('#navigation a');
+
+    links[0].addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+
+            render(Home);
+        }
+    );
+    links[1].addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+
+            render(About);
+        }
+    );
+    links[2].addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+
+            render(Project);
+        }
+    );
+    links[3].addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+
+            render(Blog);
+        }
+    );
+    links[4].addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+
+            render(Contact);
+        }
+    );
+}
+
+render(Home);

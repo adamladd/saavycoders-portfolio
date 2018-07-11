@@ -101,10 +101,6 @@ a:hover {
     padding: 10px;
 }
 
-#contents p + ul {
-
-}
-
 #contents li:first-child {
     background-color: violet
 }
@@ -151,10 +147,6 @@ a:hover {
 
 .fa-linkedin-in {
 color: blue;
-}
-
-.fa-google {
-
 }
 
 @media (min-width: 612px) {
