@@ -3,24 +3,22 @@ import Header from './src/Header';
 import Contents from './src/Contents';
 import Footer from './src/Footer';
 
-var Home = {
-    'title': "Adam Ladd's Savvy Coders Project"
-};
-
-var About = {
-    'title': 'the "About Me" page! `.=.,,,'
-};
-
-var Project = {
-    'title': 'my projects page'
-};
-
-var Blog = {
-    'title': 'my blog page!'
-};
-
-var Contact = {
-    'title': 'the contact page!'
+var State = {
+    'Home': {
+        'title': "Adam Ladd's Savvy Coders Project"
+    },
+    'About': {
+        'title': 'the "About Me" page! `.=.,,,'
+    },
+    'Projects': {
+        'title': 'my projects page'
+    },
+    'Blog': {
+        'title': 'my blog page!'
+    },
+    'Contact': {
+        'title': 'the contact page!'
+    },
 };
 
 var initialHTML = document.body.innerHTML;
@@ -30,6 +28,7 @@ function render(state){
     var greeting;
     var input;
     var links;
+    var i = 0;
 
     root.innerHTML = `
         ${Navigation}
@@ -54,46 +53,21 @@ function render(state){
 
     links = document.querySelectorAll('#navigation a');
 
-    links[0].addEventListener(
-        'click',
-        (event) => {
-            event.preventDefault();
+    while(i < links.length){
+        links[i].addEventListener(
+            'click',
+            (event) => {
+                var page = event.target.textContent;
 
-            render(Home);
-        }
-    );
-    links[1].addEventListener(
-        'click',
-        (event) => {
-            event.preventDefault();
+                event.preventDefault();
 
-            render(About);
-        }
-    );
-    links[2].addEventListener(
-        'click',
-        (event) => {
-            event.preventDefault();
+                console.log(page);
 
-            render(Project);
-        }
-    );
-    links[3].addEventListener(
-        'click',
-        (event) => {
-            event.preventDefault();
-
-            render(Blog);
-        }
-    );
-    links[4].addEventListener(
-        'click',
-        (event) => {
-            event.preventDefault();
-
-            render(Contact);
-        }
-    );
+                render(State[page]);
+            }
+        );
+        i++;
+    }
 }
 
-render(Home);
+render(State['Home']);
