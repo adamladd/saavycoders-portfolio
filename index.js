@@ -2,27 +2,12 @@ import Navigation from './src/Navigation';
 import Header from './src/Header';
 import Contents from './src/Contents';
 import Footer from './src/Footer';
+import * as State from './store';
+import Navigo from 'navigo';
 
-var State = {
-    'Home': {
-        'title': "Adam Ladd's Savvy Coders Project"
-    },
-    'About': {
-        'title': 'the "About Me" page! `.=.,,,'
-    },
-    'Projects': {
-        'title': 'my projects page'
-    },
-    'Blog': {
-        'title': 'my blog page!'
-    },
-    'Contact': {
-        'title': 'the contact page!'
-    },
-};
 
-var initialHTML = document.body.innerHTML;
 var root = document.querySelector('#root');
+var router = new Navigo();
 
 function render(state){
     var greeting;
@@ -31,11 +16,10 @@ function render(state){
     var i = 0;
 
     root.innerHTML = `
-        ${Navigation}
+        ${Navigation(state)}
         ${Header(state)}
         ${Contents}
         ${Footer}
-        ${initialHTML}
         `;
 
     greeting = document.querySelector('#greeting');

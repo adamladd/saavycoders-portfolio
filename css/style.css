@@ -44,6 +44,9 @@ a:hover {
     padding: 5%;
     position: sticky;
     top: 0;
+    left: 0;
+    height: auto;
+    width: 100vw;
 }
 
 #navigation ul {
@@ -53,17 +56,20 @@ a:hover {
     justify-content: space-around;
 }
 
-#navigation > ul {
+#navigation > ul.container {
     align-items: center;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 0;
     padding: 10px;
 }
 
 #navigation > ul > li {
-    margin: 0 10px 0 0;
+    position: relative;
+    display: inline;
+    list-style: none;
 }
 
 #navigation .container {
@@ -95,6 +101,7 @@ a:hover {
 
 #header {
     padding: 20px;
+    margin-top: 1.3em;
 }
 
 #contents {
@@ -134,7 +141,7 @@ a:hover {
 
 .container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 960px;
 }
 
 .fa-github {
@@ -150,21 +157,5 @@ color: blue;
 }
 
 @media (min-width: 612px) {
-    body{
-        grid-template-columns: 10rem auto;
-        grid-template-rows: min-content auto min-content;
-        grid-template-areas:
-          "navigation header"
-          "navigation content"
-          "navigation footer";
-    }
-
-    #navigation {
-        grid-area: navigation;
-    }
-
-    #navigation > ul {
-        flex-direction: column;
-        height: 25vh;
-    }
+   
 }
